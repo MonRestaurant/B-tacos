@@ -59,212 +59,140 @@
                         <div class="mx-auto max-w-7xl">
                             <!-- Section Pizzas -->
                             <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question1" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Nos Pizzas</span>
-                                        <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
+    <div class="transition-all border border-gray-200 shadow rounded-lg">
+        <button type="button" id="question1" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
+            <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Nos Pizzas</span>
+            <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </button>
 
-                                    <div id="answer1" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b rounded-lg">
-                                                <thead class="bg-Phthalo">
-                                                    <tr>
-                                                        <th class="p-2 text-left font-semibold"></th>
-                                                        <th class="p-2 text-center font-semibold">MINI</th>
-                                                        <th class="p-2 text-center font-semibold">SÉNIOR</th>
-                                                        <th class="p-2 text-center font-semibold">MÉGA</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">MEXICAINE</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, viande hachée, chorizo, poivrons, olives</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">9 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">14 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">19 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">ROYAL</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, jambon, merguez, champignons</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">9 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">14 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">19 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">4 SAISONS</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, jambon, champignons, olives, poivrons</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">8 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">13 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">18 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">FROMAGÈRE</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Sauce fromagère, mozzarella, poulet, chèvre</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">8 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">13 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">18 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">MARGUERITA</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, olives</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">7 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">12 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">17 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">CARNIVOR</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Sauce barbecue, mozzarella, poulet, chorizo, viande hachée</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">10 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">15 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">20 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">REINE</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, jambon, champignons</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">8 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">13 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">18 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">NAPOLITAINE</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, câpres, champignons</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">7 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">12 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">17 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">4 FROMAGES</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, chèvre, fromage bleu, fromage brie</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">8 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">13 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">18 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">MAISTER</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, chorizo, oignons</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">8 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">13 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">18 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">LE HOS KEBAB</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, kebab, oignons</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">8 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">13 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">18 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">BOLONAISE</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, oignons, tomates fraîches, viande hachée</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">9 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">14 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">19 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">ALGERIENNE</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, viande hachée, tomate fraîche, merguez, oignons, sauce algérienne</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">7 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">12 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">17 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">VÉGÉTARIENNE</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, olives, tomates fraîches, poivrons, oignons</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">9 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">14 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">19 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">SAVOYARD</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Crème fraîche, mozzarella, pommes de terre, fromage reblochon, oignons</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">9 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">14 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">19 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">RACLETTE</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Crème fraîche, mozzarella, jambon, pommes de terre, raclette</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">7 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">12 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">17 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">CHERR MEIL</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Crème fraîche, mozzarella, chèvre miel</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">8 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">13 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">18 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">VENEZIA</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Crème fraîche, mozzarella, pomme de terre, saumon</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">9 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">14 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">19 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">CHINEN</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Crème fraîche, mozzarella, poulet, pomme de terre, oeuf</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">8 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">13 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">18 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">BACON</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Crème fraîche, mozzarella, bacon, oignons</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">8 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">13 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">18 €</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+        <div id="answer1" style="display:none;">
+            <div class="overflow-x-auto w-full">
+                <table class="min-w-full table-auto text-xs sm:text-sm bg-b rounded-lg">
+                    <thead class="bg-Phthalo">
+                        <tr>
+                            <th class="p-2 text-left font-semibold"></th>
+                            <th class="p-2 text-center font-semibold">MINI</th>
+                            <th class="p-2 text-center font-semibold">SÉNIOR</th>
+                            <th class="p-2 text-center font-semibold">MÉGA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t">
+                            <td class="p-2 align-top text-sm">
+                                <p class="font-semibold bg-Phthalo text-sm">SAVOYARDE</p>
+                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Crème fraîche, mozzarella, pommes de terre, lardons, rebloches, oignons</p>
+                            </td>
+                            <td class="p-2 text-center text-g text-sm">11,20€</td>
+                            <td class="p-2 text-center text-g text-sm">13,50€</td>
+                            <td class="p-2 text-center text-g text-sm">18,50€</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-2 align-top text-sm">
+                                <p class="font-semibold bg-Phthalo text-sm">RACLETTE</p>
+                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Crème fraîche, mozzarella, jambon, pommes de terre, raclette</p>
+                            </td>
+                            <td class="p-2 text-center text-g text-sm">11,80€</td>
+                            <td class="p-2 text-center text-g text-sm">14 €</td>
+                            <td class="p-2 text-center text-g text-sm">19 €</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-2 align-top text-sm">
+                                <p class="font-semibold bg-Phthalo text-sm">CHÈVRE MIEL</p>
+                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Crème fraîche, mozzarella, fromage de chèvre, miel</p>
+                            </td>
+                            <td class="p-2 text-center text-g text-sm">11,80€</td>
+                            <td class="p-2 text-center text-g text-sm">14 €</td>
+                            <td class="p-2 text-center text-g text-sm">19 €</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-2 align-top text-sm">
+                                <p class="font-semibold bg-Phthalo text-sm">REINE</p>
+                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, jambon, champignons</p>
+                            </td>
+                            <td class="p-2 text-center text-g text-sm">10,50€</td>
+                            <td class="p-2 text-center text-g text-sm">12,20€</td>
+                            <td class="p-2 text-center text-g text-sm">17,20€</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-2 align-top text-sm">
+                                <p class="font-semibold bg-Phthalo text-sm">LE 100'S KEBAB</p>
+                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, kebab, oignons</p>
+                            </td>
+                            <td class="p-2 text-center text-g text-sm">11,80€</td>
+                            <td class="p-2 text-center text-g text-sm">14 €</td>
+                            <td class="p-2 text-center text-g text-sm">19 €</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-2 align-top text-sm">
+                                <p class="font-semibold bg-Phthalo text-sm">PÊCHEUR</p>
+                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, thon, oignons, olives</p>
+                            </td>
+                            <td class="p-2 text-center text-g text-sm">10,90€</td>
+                            <td class="p-2 text-center text-g text-sm">13,20€</td>
+                            <td class="p-2 text-center text-g text-sm">18,20€</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-2 align-top text-sm">
+                                <p class="font-semibold bg-Phthalo text-sm">VÉGÉTARIENNE</p>
+                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, olives, tomates fraîches, poivrons, oignons</p>
+                            </td>
+                            <td class="p-2 text-center text-g text-sm">10,50€</td>
+                            <td class="p-2 text-center text-g text-sm">12,20€</td>
+                            <td class="p-2 text-center text-g text-sm">17,20€</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-2 align-top text-sm">
+                                <p class="font-semibold bg-Phthalo text-sm">4 FROMAGES</p>
+                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, chèvre, bleu, emmental</p>
+                            </td>
+                            <td class="p-2 text-center text-g text-sm">12€</td>
+                            <td class="p-2 text-center text-g text-sm">14€</td>
+                            <td class="p-2 text-center text-g text-sm">19€</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-2 align-top text-sm">
+                                <p class="font-semibold bg-Phthalo text-sm">FRUITS DE MER</p>
+                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, fruits de mer</p>
+                            </td>
+                            <td class="p-2 text-center text-g text-sm">11,80€</td>
+                            <td class="p-2 text-center text-g text-sm">14€</td>
+                            <td class="p-2 text-center text-g text-sm">19€</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-2 align-top text-sm">
+                                <p class="font-semibold bg-Phthalo text-sm">CHAMPION</p>
+                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, champignons, viande hachée</p>
+                            </td>
+                            <td class="p-2 text-center text-g text-sm">10,50€</td>
+                            <td class="p-2 text-center text-g text-sm">12,20€</td>
+                            <td class="p-2 text-center text-g text-sm">17,20€</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-2 align-top text-sm">
+                                <p class="font-semibold bg-Phthalo text-sm">CALZONE</p>
+                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, jambon</p>
+                            </td>
+                            <td class="p-2 text-center text-g text-sm">9,70€</td>
+                            <td class="p-2 text-center text-g text-sm">11,80€</td>
+                            <td class="p-2 text-center text-g text-sm">16,80€</td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="p-2 align-top text-sm">
+                                <p class="font-semibold bg-Phthalo text-sm">MEXICAINE</p>
+                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, viande hachée, poivrons, olives</p>
+                            </td>
+                            <td class="p-2 text-center text-g text-sm">11,80€</td>
+                            <td class="p-2 text-center text-g text-sm">14 €</td>
+                            <td class="p-2 text-center text-g text-sm">19 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
                             <!-- Section Baguettes farcies -->
                             <div class="max-w-3xl mx-auto mb-4">
