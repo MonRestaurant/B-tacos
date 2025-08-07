@@ -1,1054 +1,281 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Menu B'tacos</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="app.js"></script>
-    
-    <style>
-        body {
-            font-family: 'Raleway', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-        }
-        .bg-Phthalo {
-            color: #cf613c;
-        }
-        .bg-b {
-            background-color: #fbeecc;
-        }
-        .text-g {
-            color: #17301a;
-        }
-        .border-Phthalo {
-            border-color: #0C4B33;
-        }
-        .shadow-custom {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .line-clamp-3 {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accueil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Cacher la scrollbar native des catégories */
+    #categories::-webkit-scrollbar {
+      display: none;
+    }
+    #categories {
+      -ms-overflow-style: none;  /* IE et Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+  </style>
 </head>
-<body style="background-image: url('images/f.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <header>
-        <nav class="bg-transparent border-gray-200 px-4 lg:px-6 py-2">
-            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                
-                    <img src="images/logo.png" class="mr-3 h-16 w-16 sm:h-9" alt="Logo" />
-                
-            </div>
-        </nav>
-    </header>
+<body class="bg-[#F8F9FF] font-serif">
+  <div class="max-w-sm mx-auto min-h-screen  py-6 relative flex flex-col h-screen">
 
-    <div class="flex justify-center items-start min-h-screen">
-        <div class="max-w-[720px] mx-auto">
-            <div class="block mb-4 mx-auto border-b border-slate-300 pb-2 max-w-[360px]">
-                <h2 class="text-3xl sm:text-4xl font-bold text-center bg-Phthalo">Notre Menu</h2>
-            </div>
+    <!-- Conteneur fixe -->
+    <div class="sticky top-0 bg-[#F8F9FF] z-10">
 
-            <div class="relative flex w-96 flex-col rounded-xl bg-black bg-opacity-50 bg-clip-border text-gray-700 shadow-custom">
-                <div class="p-2">
-                    <div class="divide-y divide-gray-200">
-                        <div class="mx-auto max-w-7xl">
-                            <!-- Section Pizzas -->
-                            <div class="max-w-3xl mx-auto mb-4">
-    <div class="transition-all border border-gray-200 shadow rounded-lg">
-        <button type="button" id="question1" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-            <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Nos Pizzas</span>
-            <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
+      <!-- Header -->
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-2xl font-semibold">Bienvenu !</h1>
+        <img src="images/logo.png" alt="Avatar" class="w-12 h-12 rounded-full">
+      </div>
+
+      <!-- Catégories avec flèches -->
+      <div class="relative mb-6">
+
+        <!-- Flèche gauche -->
+        <button id="scrollLeft" aria-label="Scroll categories left"
+                class="absolute left-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-700 rounded-full p-2 shadow-md z-30 hidden">
+          &#10094;
         </button>
 
-        <div id="answer1" style="display:none;">
-            <div class="overflow-x-auto w-full">
-                <table class="min-w-full table-auto text-xs sm:text-sm bg-b rounded-lg">
-                    <thead class="bg-Phthalo">
-                        <tr>
-                            <th class="p-2 text-left font-semibold"></th>
-                            <th class="p-2 text-center font-semibold">MINI</th>
-                            <th class="p-2 text-center font-semibold">SÉNIOR</th>
-                            <th class="p-2 text-center font-semibold">MÉGA</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr class="border-t">
-                            <td class="p-2 align-top text-sm">
-                                <p class="font-semibold bg-Phthalo text-sm">SAVOYARDE</p>
-                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Crème fraîche, mozzarella, pommes de terre, lardons, rebloches, oignons</p>
-                            </td>
-                            <td class="p-2 text-center text-g text-sm">11,20€</td>
-                            <td class="p-2 text-center text-g text-sm">13,50€</td>
-                            <td class="p-2 text-center text-g text-sm">18,50€</td>
-                        </tr>
-                        <tr class="border-t">
-                            <td class="p-2 align-top text-sm">
-                                <p class="font-semibold bg-Phthalo text-sm">RACLETTE</p>
-                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Crème fraîche, mozzarella, jambon, pommes de terre, raclette</p>
-                            </td>
-                            <td class="p-2 text-center text-g text-sm">11,80€</td>
-                            <td class="p-2 text-center text-g text-sm">14 €</td>
-                            <td class="p-2 text-center text-g text-sm">19 €</td>
-                        </tr>
-                        <tr class="border-t">
-                            <td class="p-2 align-top text-sm">
-                                <p class="font-semibold bg-Phthalo text-sm">CHÈVRE MIEL</p>
-                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Crème fraîche, mozzarella, fromage de chèvre, miel</p>
-                            </td>
-                            <td class="p-2 text-center text-g text-sm">11,80€</td>
-                            <td class="p-2 text-center text-g text-sm">14 €</td>
-                            <td class="p-2 text-center text-g text-sm">19 €</td>
-                        </tr>
-                        <tr class="border-t">
-                            <td class="p-2 align-top text-sm">
-                                <p class="font-semibold bg-Phthalo text-sm">REINE</p>
-                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, jambon, champignons</p>
-                            </td>
-                            <td class="p-2 text-center text-g text-sm">10,50€</td>
-                            <td class="p-2 text-center text-g text-sm">12,20€</td>
-                            <td class="p-2 text-center text-g text-sm">17,20€</td>
-                        </tr>
-                        <tr class="border-t">
-                            <td class="p-2 align-top text-sm">
-                                <p class="font-semibold bg-Phthalo text-sm">LE 100'S KEBAB</p>
-                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, kebab, oignons</p>
-                            </td>
-                            <td class="p-2 text-center text-g text-sm">11,80€</td>
-                            <td class="p-2 text-center text-g text-sm">14 €</td>
-                            <td class="p-2 text-center text-g text-sm">19 €</td>
-                        </tr>
-                        <tr class="border-t">
-                            <td class="p-2 align-top text-sm">
-                                <p class="font-semibold bg-Phthalo text-sm">PÊCHEUR</p>
-                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, thon, oignons, olives</p>
-                            </td>
-                            <td class="p-2 text-center text-g text-sm">10,90€</td>
-                            <td class="p-2 text-center text-g text-sm">13,20€</td>
-                            <td class="p-2 text-center text-g text-sm">18,20€</td>
-                        </tr>
-                        <tr class="border-t">
-                            <td class="p-2 align-top text-sm">
-                                <p class="font-semibold bg-Phthalo text-sm">VÉGÉTARIENNE</p>
-                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, olives, tomates fraîches, poivrons, oignons</p>
-                            </td>
-                            <td class="p-2 text-center text-g text-sm">10,50€</td>
-                            <td class="p-2 text-center text-g text-sm">12,20€</td>
-                            <td class="p-2 text-center text-g text-sm">17,20€</td>
-                        </tr>
-                        <tr class="border-t">
-                            <td class="p-2 align-top text-sm">
-                                <p class="font-semibold bg-Phthalo text-sm">4 FROMAGES</p>
-                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, chèvre, bleu, emmental</p>
-                            </td>
-                            <td class="p-2 text-center text-g text-sm">12€</td>
-                            <td class="p-2 text-center text-g text-sm">14€</td>
-                            <td class="p-2 text-center text-g text-sm">19€</td>
-                        </tr>
-                        <tr class="border-t">
-                            <td class="p-2 align-top text-sm">
-                                <p class="font-semibold bg-Phthalo text-sm">FRUITS DE MER</p>
-                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, fruits de mer</p>
-                            </td>
-                            <td class="p-2 text-center text-g text-sm">11,80€</td>
-                            <td class="p-2 text-center text-g text-sm">14€</td>
-                            <td class="p-2 text-center text-g text-sm">19€</td>
-                        </tr>
-                        <tr class="border-t">
-                            <td class="p-2 align-top text-sm">
-                                <p class="font-semibold bg-Phthalo text-sm">CHAMPION</p>
-                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, champignons, viande hachée</p>
-                            </td>
-                            <td class="p-2 text-center text-g text-sm">10,50€</td>
-                            <td class="p-2 text-center text-g text-sm">12,20€</td>
-                            <td class="p-2 text-center text-g text-sm">17,20€</td>
-                        </tr>
-                        <tr class="border-t">
-                            <td class="p-2 align-top text-sm">
-                                <p class="font-semibold bg-Phthalo text-sm">CALZONE</p>
-                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, jambon</p>
-                            </td>
-                            <td class="p-2 text-center text-g text-sm">9,70€</td>
-                            <td class="p-2 text-center text-g text-sm">11,80€</td>
-                            <td class="p-2 text-center text-g text-sm">16,80€</td>
-                        </tr>
-                        <tr class="border-t">
-                            <td class="p-2 align-top text-sm">
-                                <p class="font-semibold bg-Phthalo text-sm">MEXICAINE</p>
-                                <p class="text-g text-xs break-words max-w-xs line-clamp-3">Tomate, mozzarella, viande hachée, poivrons, olives</p>
-                            </td>
-                            <td class="p-2 text-center text-g text-sm">11,80€</td>
-                            <td class="p-2 text-center text-g text-sm">14 €</td>
-                            <td class="p-2 text-center text-g text-sm">19 €</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        <!-- Liste catégories scrollable -->
+        <div id="categories" class="flex gap-4 overflow-x-auto scrollbar-hide ">
+          <!-- Catégorie avec data-id -->
+          <div class="flex flex-col items-center min-w-[80px] cursor-pointer category" data-id="pizza">
+            <img src="images/pizza.jpg" alt="Catégorie 1" class="w-20 h-20 rounded-full object-cover" />
+            <p class="mt-2 text-sm font-semibold">Pizzas</p>
+          </div>
+          <div class="flex flex-col items-center min-w-[80px] cursor-pointer category" data-id="assiettes">
+            <img src="images/assiette.jpg" alt="Catégorie 2" class="w-20 h-20 rounded-full object-cover" />
+            <p class="mt-2 text-sm font-semibold">Assiettes</p>
+          </div>
+          <div class="flex flex-col items-center min-w-[80px] cursor-pointer category" data-id="tacos">
+            <img src="images/tacos.jpg" alt="Catégorie 3" class="w-20 h-20 rounded-full object-cover" />
+            <p class="mt-2 text-sm font-semibold">Tacos</p>
+          </div>
+          <div class="flex flex-col items-center min-w-[80px] cursor-pointer category" data-id="sandwiches">
+            <img src="images/sandwich.jpg" alt="Catégorie 3" class="w-20 h-20 rounded-full object-cover" />
+            <p class="mt-2 text-sm font-semibold">Sandwiches</p>
+          </div>
+          <div class="flex flex-col items-center min-w-[80px] cursor-pointer category" data-id="burgers">
+            <img src="images/burger.jpg" alt="Catégorie 3" class="w-20 h-20 rounded-full object-cover" />
+            <p class="mt-2 text-sm font-semibold">Burgers</p>
+          </div>
+          <div class="flex flex-col items-center min-w-[80px] cursor-pointer category" data-id="makloub">
+            <img src="images/makloub.jpg" alt="Catégorie 3" class="w-20 h-20 rounded-full object-cover" />
+            <p class="mt-2 text-sm font-semibold">Makloub</p>
+          </div>
+          <div class="flex flex-col items-center min-w-[80px] cursor-pointer category" data-id="texmex">
+            <img src="images/texmex.jpg" alt="Catégorie 3" class="w-20 h-20 rounded-full object-cover" />
+            <p class="mt-2 text-sm font-semibold">Tex Mex</p>
+          </div>
+          <div class="flex flex-col items-center min-w-[80px] cursor-pointer category" data-id="cheeseNaan">
+            <img src="images/cheesenaan.jpg" alt="Catégorie 3" class="w-20 h-20 rounded-full object-cover" />
+            <p class="mt-2 text-sm font-semibold">CheeseNaan</p>
+          </div>
+          
+
+          <!-- Ajoute plus si besoin -->
         </div>
-    </div>
-</div>
 
-                            <!-- Section Baguettes farcies -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question2" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Nos Baguettes farcies</span>
-                                        <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
+        <!-- Flèche droite -->
+        <button id="scrollRight" aria-label="Scroll categories right"
+                class="absolute right-0 top-1/2 -translate-y-1/2 bg-white bg-opacity-70 hover:bg-opacity-100 text-gray-700 rounded-full p-2 shadow-md z-30 hidden">
+          &#10095;
+        </button>
+      </div>
 
-                                    <div id="answer2" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b rounded-lg">
-                                                <thead class="bg-Phthalo">
-                                                    <tr>
-                                                        <th class="p-2 text-left font-semibold"></th>
-                                                        <th class="p-2 text-center font-semibold">SÉNIOR</th>
-                                                        <th class="p-2 text-center font-semibold">MÉGA</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Baguette farcie</p>
-                                                            <p class="text-g text-xs break-words max-w-xs line-clamp-3">Emmental, poulet, poivrons, oeuf, oignons</p>
-                                                        </td>
-                                                        <td class="p-2 text-center text-g text-sm">13 €</td>
-                                                        <td class="p-2 text-center text-g text-sm">18 €</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Section tex mex -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question3" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo"> Tex Mex</span>
-                                        <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
+      <!-- Barre de recherche -->
+      <div class="flex items-center bg-white rounded-xl px-4 py-2 mb-6 shadow-sm">
+        <!-- Icône de recherche -->
+        <svg class="w-5 h-5 text-gray-400 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round"
+          d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z" />
+        </svg>
 
-                                    <div id="answer3" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b rounded-lg">
-                                                <tbody class="text-g">
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Wings, Nuggets, Tenders, Mozza sticks</p>
-                                                        </td>
-                                                        
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">5 pièces</p>
-                                                            
-                                                        </td>
-                                                        <td></td>
-                                                        <td class="p-2 text-center  text-sm">7.50 €</td>
-                                                        
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Menu</p>
-                                                            
-                                                        </td>
-                                                        <td></td>
-                                                        <td class="p-2 text-center  text-sm">8.50€</td>
-                                                    </tr>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Section Vrap -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question4" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Vrap</span>
-                                        <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
+        <input id="searchInput" type="text" placeholder="Rechercher"
+           class="w-full outline-none text-gray-500 placeholder-gray-400 bg-transparent">
+      </div>
 
-                                    <div id="answer4" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b rounded-lg">
-                                                <tbody class="text-g">
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class=" text-xs font-semibold break-words max-w-xs bg-Phthalo line-clamp-3">viande au choix,chicken,escalope,cordon bleu,Tenders,kefta</p>
-                                                        <td></td>
-                                                        <td class="p-2 text-center  text-sm">9.50€</td>
-                                                        </td>
-                                                        
-                                                    </tr>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Section Burgers -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question5" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo"> Burgers</span>
-                                        <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white ray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
 
-                                    <div id="answer5" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm text-g bg-b rounded-lg">
-                                                <tbody>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Duo </p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">1 cheese + double cheese</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">12.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Cheese</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">45gr steak + 1 fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">7 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Le chèvre</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">2 steaks 100gr + chèvre + miel</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">11.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Double cheese</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">2 steaks 45gr + fromages</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">9 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Chicken</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">1 chicken pané + 1 fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">8 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">360</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">2 steaks 180gr + 2 fromages</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">12.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Royal cheese</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">2 steaks 45gr + oeuf + fromages</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">9 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">180</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">1 steak 180gr + 1 fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">9.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Country</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">2 steaks + GPDT</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">10€</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Rasty</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">1 steak 80gr + GPDT + raclette</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">10€</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Section sandwiches -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question6" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo"> Sandwichs</span>
-                                        <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white ray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div id="answer6" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm text-g bg-b rounded-lg">
-                                                <tbody>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Sandwich suisse </p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">escalope,champignons,créme fraiche</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">9.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Sandwich raclette</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">escalope,nature,bacon,galette,pdt ,fromage,raclette</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">10.50€</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Sandwich carnivore</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">2 piéces de merguez,kebab</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">9.50 €</td>
-                                                    </tr>
-                                                    
-                                                    
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Section Sandwichs classiques -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question7" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Sandwichs classiques</span>
-                                        <svg id="arrow3" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white ray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div id="answer7" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm text-g bg-b rounded-lg">
-                                                <tbody>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Cordon bleu</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Cordon bleu + fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">8.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Kebab</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">7.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Américain</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">2 steaks + fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">7.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Kefta</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Kefta + fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">8.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Merguez</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Merguez + fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">8.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Végétarien</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">crudités+GPT+Oeuf+fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center bg-Phthalo text-sm">7.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Escalope</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Escalope + fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">8.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Chicken</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Chicken curry + fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">8.50 €</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Section Sandwichs mixtes -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question8" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Sandwichs mixtes</span>
-                                        <svg id="arrow4" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white ray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div id="answer8" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm text-g bg-b rounded-lg">
-                                                <tbody>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Country</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Poulet mariné curry + sauce fromage + fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">9 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Master</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Poulet + steak + jambon + oeuf + fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">11.50€</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Supreme</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Poulet mariné curry + cordon bleu + boursin + fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">10.50€</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Royal</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Kebab + oeuf + fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">9.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Triplex</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Triple steaks + oeuf + fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">10.50€</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Radical</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Steak haché + cordon bleu + fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">10 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">L'oasis</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Kebab + boursin + steak haché + fromage</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">10.50€</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Section Tacos -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question9" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Tacos</span>
-                                        <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div id="answer9" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b text-g rounded-lg">
-                                                <tbody class="text-g">
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class=" text-xs break-words max-w-xs text-g line-clamp-4">cordon bleu,kebab,merguez,steack,tenders,nuggets,
-                                                                kefta,flafel,escalope,curry</p>
-                                                        </td>
-                                                        
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">1 viande</p>
-                                                            
-                                                        </td>
-                                                        
-                                                        <td class="p-2 text-center  text-sm">9.50 €</td>
-                                                        
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">2 viandes</p>
-                                                            
-                                                        </td>
-                                                        
-                                                        <td class="p-2 text-center  text-sm">11€</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">3 viandes</p>
-                                                            
-                                                        </td>
-                                                        
-                                                        <td class="p-2 text-center  text-sm">13.50€</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">4 viandes</p>
-                                                            
-                                                        </td>
-                                                        
-                                                        <td class="p-2 text-center  text-sm">15.50€</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">5 viandes</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">viande au choix+frite+sauce fromage</p>
-                                                        </td>
-                                                        
-                                                        <td class="p-2 text-center  text-sm">17.50€</td>
-                                                    </tr>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Section Tacos gratiné -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question10"  class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Tacos Gratiné</span>
-                                        <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div id="answer10" style="display:none;">
-                                        <div  class="overflow-x-auto w-full ">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b text-g rounded-lg">
-                                                <tbody class="">
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class=" text-xs break-words max-w-xs font-semibold bg-Phthalo line-clamp-3">Raclette,mozzarella,cheddar,lardon reblochon,chèvre</p>
-                                                        <td></td>
-                                                        <td class="p-2 text-center  text-sm">1.50€</td>
-                                                        </td>
-                                                        
-                                                    </tr>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Section Assiettes -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question11" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Assiettes</span>
-                                        <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div id="answer11" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b text-g rounded-lg">
-                                                <tbody class="text-g">
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class=" text-xs break-words max-w-xs text-g line-clamp-3">Viande au choix,kebab,merguez,steack,cordon bleu,chicken,tenders,flafel,kefta</p>
-                                                        </td>
-                                                        
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">1 viande au choix</p>
-                                                            
-                                                        </td>
-                                                        <td></td>
-                                                        <td class="p-2 text-center  text-sm">11.50€</td>
-                                                        
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">2 viandes au choix</p>
-                                                            
-                                                        </td>
-                                                        <td></td>
-                                                        <td class="p-2 text-center  text-sm">13.50€</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">3 viandes au choix</p>
-                                                            
-                                                        </td>
-                                                        <td></td>
-                                                        <td class="p-2 text-center  text-sm">15.50€</td>
-                                                    </tr>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Section menu enfant -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question12" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Menu enfant</span>
-                                        <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div id="answer12" style="display:none;" >
-                                        <div  class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b text-g rounded-lg">
-                                                <tbody class="text-g">
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class=" text-xs break-words max-w-xs font-semibold line-clamp-3">6 nuggets ou cheese burger</p>
-                                                        <td></td>
-                                                        <td class="p-2 text-center  text-sm">8€</td>
-                                                        </td>
-                                                        
-                                                    </tr>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Section Salades -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question13" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo"> Salades</span>
-                                        <svg id="arrow5" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white ray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div id="answer13" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b text-g rounded-lg">
-                                                <tbody>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">salade niçoise</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Salade verte, tomate, thon, maïs, sauce vinaigrette</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">7.50€</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Salade Italienne</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Salade verte, tomate, jambon dinde, fromage feta, sauce vinaigrette</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">7.50€</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Salade César</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Salade verte, tomate, poulet, olives, maïs, sauce vinaigrette</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">7.50€</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Salade Norvégienne</p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">Salade verte, tomate, saumon, maïs, sauce vinaigrette</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">7.50€</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Section Hummers -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question14" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo"> Hummers</span>
-                                        <svg id="arrow2" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white ray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div id="answer14" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b text-g rounded-lg">
-                                                <tbody>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">H2 </p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">2 steacks,2 fromages,2 bacons</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">8.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">H3 </p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">3 steacks,3 fromages,3 bacons</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">9.50€</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">H4 </p>
-                                                            <p class=" text-xs break-words max-w-xs line-clamp-3">4 steacks,4 fromages,4 bacons</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">10.50 €</td>
-                                                    </tr>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Section Paninis -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question15" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Paninis</span>
-                                        <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white text-white transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div id="answer15" style="display:none;" >
-                                        <div  class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b text-g rounded-lg">
-                                                <tbody class="text-g">
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class=" text-xs break-words font-semibold bg-Phthalo max-w-xs line-clamp-3">Poulet,jambon,kebab,merguez,vaiande hachée,thon,saumon,3 fromages,chèvre miel</p>
-                                                        <td></td>
-                                                        <td class="p-2 text-center  text-sm">7.50€</td>
-                                                        </td>
-                                                        
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Panini nutella</p>
-                                                        </td>
-                                                        <td></td>
-                                                        <td class="p-2 text-center  text-sm">4.50€</td>
-                                                    </tr>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            
-                           
-
-                            <!-- Section Vip -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question16" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Vip</span>
-                                        <svg id="arrow1" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div id="answer16" style="display:none;">
-                                        <div  class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b text-g rounded-lg">
-                                                <tbody class="text-g">
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class=" text-xs break-words font-semibold bg-Phthalo max-w-xs line-clamp-3">Sandwich classique+cheese burger</p>
-                                                        <td></td>
-                                                        <td class="p-2 text-center  text-sm">12€</td>
-                                                        </td>
-                                                        
-                                                    </tr>
-                                                    
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Section Desserts -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question17" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Desserts</span>
-                                        <svg id="arrow7" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white ray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div id="answer17" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b text-g rounded-lg">
-                                                <tbody>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Tarte au daim</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">3 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Tiramisu</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">3.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Snikers, Mars, Noir, Kitkat</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">1.50 €</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Section Boissons -->
-                            <div class="max-w-3xl mx-auto mb-4">
-                                <div class="transition-all border border-gray-200 shadow rounded-lg">
-                                    <button type="button" id="question18" class="flex items-center justify-between w-full px-3 py-3 sm:px-4 sm:py-4">
-                                        <span class="text-xl sm:text-gse font-semibold bg-Phthalo">Boissons</span>
-                                        <svg id="arrow8" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white ray-400 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    </button>
-
-                                    <div id="answer18" style="display:none;">
-                                        <div class="overflow-x-auto w-full">
-                                            <table class="min-w-full table-auto text-xs sm:text-sm bg-b text-g rounded-lg">
-                                                <tbody>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Eau 50cl</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">1 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Canette 33cl</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">1.70 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Bouteille 50cl</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">2.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Bouteille 1.5l</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">3.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Red Bull</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">2.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Café</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">1.50 €</td>
-                                                    </tr>
-                                                    <tr class="border-t">
-                                                        <td class="p-2 align-top text-sm">
-                                                            <p class="font-semibold bg-Phthalo text-sm">Monster</p>
-                                                        </td>
-                                                        <td class="p-2 text-center  text-sm">3 €</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
-    <script>
-        document.querySelectorAll('button[id^="question"]').forEach(button => {
-            const index = button.id.replace("question", "");
-            const answer = document.getElementById("answer" + index);
-            const arrow = document.getElementById("arrow" + index);
+    <!-- Liste des plats scrollable -->
+    <div id="productsList" class="overflow-y-auto flex-1 space-y-4">
+      <!-- Produits générés dynamiquement -->
+    </div>
+  </div>
 
-            button.addEventListener("click", () => {
-                const isOpen = answer.style.display === "block";
-                answer.style.display = isOpen ? "none" : "block";
-                arrow.style.transform = isOpen ? "rotate(0deg)" : "rotate(180deg)";
-            });
-        });
-    </script>
+<script>
+  // Données des produits par catégorie
+  const productsByCategory = {
+    pizza: [
+      { name: "SAVOYARDE", description: "Crème fraîche, mozzarella, pommes de terre, lardons, rebloches, oignons", price: "11,20€<br/>13,50€<br/>18,50€" },
+      { name: "RACLETTE", description: "Crème fraîche, mozzarella, jambon, pommes de terre, raclette", price: "11,80€<br/>14,00€<br/> 19,00€" },
+      { name: "CHÈVRE MIEL", description: "Crème fraîche, mozzarella, fromage de chèvre, nuel", price: "11,80€<br/>14,00€<br/>19,00€" },
+      { name: "REINE", description: "Tomote, mozzarella, jambon, champignons", price: "10,50€<br/>12,20€<br/>17,20€" },
+      { name: "LE 100'S KEBAB", description: "Tomote, mozzarella, kebab, oignons", price: "11,80€<br/>14,00€<br/>19,00€" },
+      { name: "PÊCHEUR", description: "Tomote, mozzarella, then, oignons, olives", price: "10,90€<br/>13,20€<br/>18,20€" },
+      { name: "VÉGÉTARIENNE", description: "Tomote, mozzarella, olives, tomates fraîches, poivrons, oignons", price: "10,50€<br/>12,20€<br/>17,20€" },
+      { name: "4 FROMAGES", description: "Tomote, mozzarella, chèvre, bleu, terro", price: "12,00€<br/>14,00€<br/>19,00€" },
+      { name: "FRUITS DE MER", description: "Tomote, fruits de mer", price: "11,80€<br/>14,00€<br/>19,00€" },
+      { name: "CHAMPION", description: "Tomote, mozzarella, champignons, viande hachée", price: "10,50€<br/>12,20€<br/>17,20€" },
+      { name: "CALZONE", description: "Tomote, mozzarella, jambon", price: "9,70€<br/>11,80€<br/>16,80€" },
+      { name: "MEXICAINE", description: "Tomote, mozzarella, viande hachée, poivrons, olives", price: "11,80€<br/>14,00€<br/>19,00€" },
+      
+    ],
+    assiettes: [
+      { name: "POULEB", price: "14,00€" },
+      { name: "STEAK", price: "14,00€" },
+      { name: "FALAFEL", price: "14,00€" },
+      { name: "REFTAL", price: "14,00€" },
+      { name: "ROYAL", description: "Viande - Œuf - Mayonnaise", price: "14,00€" },
+      { name: "MIXTE", description: "3 Viandes au choix", price: "14,00€" },
+      { name: "MENU ASSIETTE", description: "1 Assiette - Crudités + 1 Portion de frites + 1 Boisson 33cl", price: "16,50€" }
+    ],
+    tacos: [
+      { name: "Kebab", price: "10,00€" },
+      { name: "Poulet", price: "10,00€" },
+      { name: "Kefta", price: "10,00€" },
+      { name: "Steak", price: "10,00€" },
+      { name: "Cordon bleu", price: "10,00€" },
+      { name: "Nuggets", price: "10,00€" },
+      { name: "Merguez", price: "10,00€" },
+      { name: "Royal", price: "12,00€" },
+      { name: "2 viandes mixte", price: "12,50€" },
+      { name: "XL", description: "2 galettes + 2 viandes", price: "15,50€" }
+    ],
+    sandwiches: [
+      { name: "Kebab", price: "9,00€" },
+      { name: "Poulet", price: "9,50€" },
+      { name: "Kefta", price: "9,50€" },
+      { name: "Steak", price: "9,50€" },
+      { name: "Falafel", price: "9,50€" },
+      { name: "Nuggets", price: "9,50€" },
+      { name: "Merguez", price: "11,00€" },
+      { name: "Royal", description: "1 viande + œuf + Fromage", price: "11,00€" },
+      { name: "2 viandes mixtes", price: "11,00€" },
+      { name: "Masti", description: "Poulet, steak, jambon, œuf, fromage", price: "13,00€" },
+      { name: "Suprême", description: "Poulet mariné curry, cordon bleu, Boursin, fromage", price: "12,50€" },
+      { name: "Radical", description: "Steak haché, fromage, cordon bleu", price: "12,50€" },
+      { name: "Merguez", description: "Merguez, fromage", price: "9,50€" }
+    ],
+    burgers: [
+      { name: "Cheese", description: "1 steack 90gr + 1 Fromage", price: "8,00€" },
+      { name: "Double cheese", description: "2 steacks 90gr + 2 Fromages", price: "9,50€" },
+      { name: "Triple cheese", description: "3 steacks 90gr + 3 Fromages", price: "11,00€" },
+      { name: "Royal cheese", description: "2 steacks 45gr + œuf + Fromage", price: "10,50€" },
+      { name: "Rasty", description: "1 steack 90gr + GPDT + raclette", price: "12,50€" },
+      { name: "Chicken", description: "1 chicken + 1 Fromage", price: "9,50€" },
+      { name: "Royal Cheese", description: "2 steaks (45g), œuf, fromage", price: "10,50€" },
+      { name: "Rusty", description: "1 steak (90g), galette de pommes de terre", price: "12,50€" },
+      { name: "Chicken", description: "Poulet, fromage", price: "9,50€" }
+    ],
+    makloub: [
+      { name: "Makloub", description: "Viande au choix: Kebab, poulet, merguez, kefta, cordon bleu, nuggets, steak", price: "11,00€" }
+    ],
+    cheeseNaan: [
+      { name: "Cheese Naan", description: "Viande au choix: Kebab, poulet, merguez, kefta, cordon bleu, nuggets, steak", price: "11,00€" }
+    ],
+    texmex: [
+      { name: "5 pièces", description: "chiken wings,nuggets,tenders,mozza sticks", price: `7,50€ <span class="text-xs text-gray-500">(+frites)</span><br/>8,50€ <span class="text-xs text-gray-500">(Menu)</span>` }
+    ],
+    
+  };
+
+  const categories = document.querySelectorAll('.category');
+  const productsList = document.getElementById('productsList');
+  const searchInput = document.getElementById('searchInput');
+  const scrollContainer = document.getElementById('categories');
+  const btnLeft = document.getElementById('scrollLeft');
+  const btnRight = document.getElementById('scrollRight');
+
+  let currentCategory = 'pizza';
+
+  function displayProducts(categoryId, filter = "") {
+    productsList.innerHTML = "";
+
+    let products = productsByCategory[categoryId] || [];
+
+    // Filtrage si texte de recherche
+    if (filter) {
+      const f = filter.toLowerCase();
+      products = products.filter(p =>
+        p.name.toLowerCase().includes(f) ||
+        p.description?.toLowerCase().includes(f)
+      );
+    }
+
+    if (products.length === 0) {
+      productsList.innerHTML = `<p class="text-center text-gray-500">Aucun produit trouvé.</p>`;
+      return;
+    }
+
+    // Génération des produits
+    products.forEach(product => {
+      const productDiv = document.createElement('div');
+      productDiv.className = "bg-white rounded-xl shadow-md p-4 flex justify-between items-start";
+
+      productDiv.innerHTML = `
+        <div>
+          <p class="text-lg font-bold ">${product.name}</p>
+          ${product.description ? `<p class="text-sm text-gray-500">${product.description}</p>` : ''}
+        </div>
+        <p class="text-lg font-bold text-[#F16B05]">${product.price}</p>
+      `;
+
+      productsList.appendChild(productDiv);
+    });
+  }
+
+  // Clic sur une catégorie
+  categories.forEach(cat => {
+    cat.addEventListener('click', () => {
+      currentCategory = cat.getAttribute('data-id');
+
+      // Affichage bordure sous catégorie sélectionnée
+      categories.forEach(c => c.classList.remove('border-b-4', 'border-[#F16B05]'));
+      cat.classList.add('border-b-4', 'border-[#F16B05]');
+
+      // Reset recherche + affichage
+      searchInput.value = "";
+      displayProducts(currentCategory);
+    });
+  });
+
+  // 🔍 Recherche instantanée
+  searchInput.addEventListener('input', () => {
+    displayProducts(currentCategory, searchInput.value);
+  });
+
+  // Gestion scroll horizontal
+  function toggleButtons() {
+    btnLeft.style.display = scrollContainer.scrollLeft > 0 ? 'block' : 'none';
+    btnRight.style.display = scrollContainer.scrollLeft + scrollContainer.clientWidth < scrollContainer.scrollWidth ? 'block' : 'none';
+  }
+
+  btnLeft.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: -150, behavior: 'smooth' });
+  });
+
+  btnRight.addEventListener('click', () => {
+    scrollContainer.scrollBy({ left: 150, behavior: 'smooth' });
+  });
+
+  scrollContainer.addEventListener('scroll', toggleButtons);
+
+  // Initialisation au chargement
+  window.addEventListener('load', () => {
+    toggleButtons();
+    displayProducts(currentCategory);
+    // Mettre la 1ère catégorie active visuellement
+    categories.forEach(c => c.classList.remove('border-b-4', 'border-[#F16B05]'));
+    categories[0]?.classList.add('border-b-4', 'border-[#F16B05]');
+  });
+
+  window.addEventListener('resize', toggleButtons);
+</script>
+
+
 </body>
 </html>
