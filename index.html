@@ -17,7 +17,7 @@
   </style>
 </head>
 <body class="bg-[#F8F9FF] font-serif">
-  <div class="max-w-sm mx-auto min-h-screen  py-6 relative flex flex-col h-screen">
+  <div class="max-w-sm mx-auto min-h-screen px-2 py-6 relative flex flex-col h-screen">
 
     <!-- Conteneur fixe -->
     <div class="sticky top-0 bg-[#F8F9FF] z-10">
@@ -107,7 +107,6 @@
   </div>
 
 <script>
-  // Données des produits par catégorie
   const productsByCategory = {
     pizza: [
       { name: "SAVOYARDE", description: "Crème fraîche, mozzarella, pommes de terre, lardons, rebloches, oignons", price: "11,20€<br/>13,50€<br/>18,50€" },
@@ -125,13 +124,15 @@
       
     ],
     assiettes: [
-      { name: "POULEB", price: "14,00€" },
+      { name: "POULET", price: "14,00€" },
       { name: "STEAK", price: "14,00€" },
       { name: "FALAFEL", price: "14,00€" },
-      { name: "REFTAL", price: "14,00€" },
-      { name: "ROYAL", description: "Viande - Œuf - Mayonnaise", price: "14,00€" },
-      { name: "MIXTE", description: "3 Viandes au choix", price: "14,00€" },
-      { name: "MENU ASSIETTE", description: "1 Assiette - Crudités + 1 Portion de frites + 1 Boisson 33cl", price: "16,50€" }
+      { name: "Kefta", price: "14,00€" },
+      { name: "ROYAL", description: "1 Viande , Œuf , fromage", price: "14,50€" },
+      { name: "MIXTE", description: "2 Viandes au choix", price: "15,50€" },
+      { name: "MIXTE", description: "3 Viandes au choix", price: "16,50€" },
+      { name: "MENU ASSIETTE", description: "1 Assiette + Crudités + 1 Portion de frites + 1 Boisson 33cl", price: `16,50€ <br/> <span class="text-xs text-gray-500"> (sans boisson 
+        -1€)</span>` }
     ],
     tacos: [
       { name: "Kebab", price: "10,00€" },
@@ -180,7 +181,6 @@
     texmex: [
       { name: "5 pièces", description: "chiken wings,nuggets,tenders,mozza sticks", price: `7,50€ <span class="text-xs text-gray-500">(+frites)</span><br/>8,50€ <span class="text-xs text-gray-500">(Menu)</span>` }
     ],
-    
   };
 
   const categories = document.querySelectorAll('.category');
@@ -193,62 +193,63 @@
   let currentCategory = 'pizza';
 
   function displayProducts(categoryId, filter = "") {
-    productsList.innerHTML = "";
+    productsList.innerHTML = `<p class="text-center text-gray-400">Chargement...</p>`;
 
-    let products = productsByCategory[categoryId] || [];
+    setTimeout(() => {
+      let products = productsByCategory[categoryId] || [];
 
-    // Filtrage si texte de recherche
-    if (filter) {
-      const f = filter.toLowerCase();
-      products = products.filter(p =>
-        p.name.toLowerCase().includes(f) ||
-        p.description?.toLowerCase().includes(f)
-      );
-    }
+      // Filtrer uniquement par nom et description (si elle existe)
+      if (filter) {
+        const f = filter.toLowerCase();
+        products = products.filter(p =>
+          p.name.toLowerCase().includes(f) ||
+          (p.description && p.description.toLowerCase().includes(f))
+        );
+      }
 
-    if (products.length === 0) {
-      productsList.innerHTML = `<p class="text-center text-gray-500">Aucun produit trouvé.</p>`;
-      return;
-    }
+      if (products.length === 0) {
+        productsList.innerHTML = `<p class="text-center text-gray-500">Aucun produit trouvé.</p>`;
+        return;
+      }
 
-    // Génération des produits
-    products.forEach(product => {
-      const productDiv = document.createElement('div');
-      productDiv.className = "bg-white rounded-xl shadow-md p-4 flex justify-between items-start";
+      productsList.innerHTML = "";
+      products.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = "bg-white rounded-xl shadow-md p-4 flex justify-between items-start";
 
-      productDiv.innerHTML = `
-        <div>
-          <p class="text-lg font-bold ">${product.name}</p>
-          ${product.description ? `<p class="text-sm text-gray-500">${product.description}</p>` : ''}
-        </div>
-        <p class="text-lg font-bold text-[#F16B05]">${product.price}</p>
-      `;
+        productDiv.innerHTML = `
+          <div>
+            <p class="text-lg font-bold">${product.name}</p>
+            <p class="text-sm text-gray-500">${product.description || ""}</p>
+          </div>
+          <p class="text-lg font-bold text-[#F87B1B]">${product.price}</p>
+        `;
 
-      productsList.appendChild(productDiv);
-    });
+        productsList.appendChild(productDiv);
+      });
+    }, 100); // Petit délai pour afficher le texte de chargement
   }
 
-  // Clic sur une catégorie
+  // Clic sur catégories
   categories.forEach(cat => {
     cat.addEventListener('click', () => {
       currentCategory = cat.getAttribute('data-id');
 
-      // Affichage bordure sous catégorie sélectionnée
-      categories.forEach(c => c.classList.remove('border-b-4', 'border-[#F16B05]'));
-      cat.classList.add('border-b-4', 'border-[#F16B05]');
+      // Gestion style actif
+      categories.forEach(c => c.classList.remove('border-b-4', 'border-[#F87B1B]'));
+      cat.classList.add('border-b-4', 'border-[#F87B1B]');
 
-      // Reset recherche + affichage
       searchInput.value = "";
       displayProducts(currentCategory);
     });
   });
 
-  // 🔍 Recherche instantanée
+  // Recherche instantanée
   searchInput.addEventListener('input', () => {
     displayProducts(currentCategory, searchInput.value);
   });
 
-  // Gestion scroll horizontal
+  // Scroll flèches
   function toggleButtons() {
     btnLeft.style.display = scrollContainer.scrollLeft > 0 ? 'block' : 'none';
     btnRight.style.display = scrollContainer.scrollLeft + scrollContainer.clientWidth < scrollContainer.scrollWidth ? 'block' : 'none';
@@ -264,17 +265,17 @@
 
   scrollContainer.addEventListener('scroll', toggleButtons);
 
-  // Initialisation au chargement
-  window.addEventListener('load', () => {
+  // Chargement initial
+  document.addEventListener('DOMContentLoaded', () => {
     toggleButtons();
     displayProducts(currentCategory);
-    // Mettre la 1ère catégorie active visuellement
-    categories.forEach(c => c.classList.remove('border-b-4', 'border-[#F16B05]'));
-    categories[0]?.classList.add('border-b-4', 'border-[#F16B05]');
+    categories.forEach(c => c.classList.remove('border-b-4', 'border-[#F87B1B]'));
+    categories[0]?.classList.add('border-b-4', 'border-[#F87B1B]');
   });
 
   window.addEventListener('resize', toggleButtons);
 </script>
+
 
 
 </body>
